@@ -1,46 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <script>
-        document.writeln("<h1>Hola mundo cruel desde JavaScript</h1>");
-        document.writeln("<center>");
+        var fecha= new Date();
+        var unTexto = new String ();
+        var horas= fecha.getHours();
+        if(horas<12){
+            alert("Bienvenid@, Buenos días");
+        }else{
+            if(horas>=12 & horas<18){
+                alert("Bienvenid@, Buenas tardes");
+            }else{
+                if(horas>=18 & horas<24){
+                    alert("Bienvenid@, Buenas nochres");
+                }
+            }
+        }
+        var nombre = "";
+        var edad = 0;
+        var localidad = "";
+        var profesion = "";
+        nombre = prompt("¿Cuál es tu nombre?");
+        edad = prompt("¿Cuál es tu edad?");
+        localidad = prompt("¿Cuál es tu localidad?");
+        profesion = prompt("¿Cuál es tu profesión?");
+        var respuesta = confirm("¿Los datos son correctos?" + 
+        " \n Nombre: "+nombre+
+        " \n Edad: "+edad+
+        " \n Localidad: "+localidad+
+        " \n Profesion: "+profesion);
+
+        if (respuesta) {
+            document.writeln("<center>");
         document.writeln("<table border='2'>");
         //Renglon1
         document.writeln("<tr>");
         //Col1
-        document.writeln("<td rowspan='4'>");
+        document.writeln("<td rowspan='4' width='25%'>");
         document.writeln("Foto");
         document.writeln("</td>");
         //Col2
         document.writeln("<td>");
-        document.writeln("<b>Nombre: </b>Tania Belen Galindo Villegas")
+        document.writeln("<b>Nombre: </b>"+nombre)
         document.writeln("</td>");
         document.writeln("</tr>");
         //Renglon2
         document.writeln("<tr>");
         document.writeln("<td>");
-        document.writeln("<b>Edad: </b>19 años")
+        document.writeln("<b>Edad: </b> "+edad+ " años")
         document.writeln("</td>");
         document.writeln("</tr>");
         //Renglon4
         document.writeln("<tr>");
         document.writeln("<td>");
-        document.writeln("<b>Localidad: </b>Emiliano Zapata")
+        document.writeln("<b>Localidad: </b>"+localidad)
         document.writeln("</td>");
         document.writeln("</tr>");
         //Renglon5
         document.writeln("<tr>");
         document.writeln("<td>");
-        document.writeln("<b>Profesión: </b>Estudiante")
+        document.writeln("<b>Profesión: </b>"+profesion)
         document.writeln("</td>");
         document.writeln("</tr>");
         document.writeln("</table>");
         document.writeln("</center>");
 
+        } else {
+            alert("Gracias por visitarnos, vuelve pronto");
+        }
+
+       
 
     </script>
 </head>
